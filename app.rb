@@ -43,7 +43,7 @@ get '/sensor/:sensor' do
 
   # Fetch the data points from the database
   datapoints = DataPoint.all(:sensor => params["sensor"])
-
+  @sensor_name = params["sensor"]
   # Loop through the returned data points and stick them in the hash
   datapoints.each do |point|
   	@data["#{point.created_at}"] = point.reading
