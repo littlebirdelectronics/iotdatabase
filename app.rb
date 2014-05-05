@@ -8,7 +8,7 @@ require 'chartkick'
 
 MongoMapper.connection = Mongo::Connection.new("oceanic.mongohq.com", 10000)
 MongoMapper.database = 'datapoints'
-MongoMapper.database.authenticate('littlebird', 'MchPKyA7')
+MongoMapper.database.authenticate(ENV['MONGO_USER'], ENV['MONGO_PASS'])
 
 
 class DataPoint
